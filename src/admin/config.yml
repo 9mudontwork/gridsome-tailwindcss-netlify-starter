@@ -1,0 +1,53 @@
+backend:
+  name: git-gateway
+  repo: master
+
+media_folder: 'static/uploads'
+public_folder: '/uploads'
+
+collections:
+  - label: 'เกี่ยวกับตัวเอง'
+    name: 'about'
+    folder: 'content/pages'
+    slug: 'about'
+    format: 'json'
+    create: true
+    editor:
+      preview: false
+    fields:
+      - label: 'ข้อความหลัก'
+        name: 'title'
+        widget: 'string'
+      - label: 'ข้อความ หรือ คำพูด'
+        name: 'description'
+        widget: 'string'
+      - label: 'ข้อมูลโซเชียล'
+        name: 'social'
+        widget: 'list'
+        allow_add: true
+        fields:
+          - label: 'ชื่อโซเชียล'
+            name: 'socialName'
+            widget: 'string'
+          - label: 'Url โซเชียล'
+            name: 'socialUrl'
+            widget: 'string'
+          - label: 'social css icon'
+            name: 'socialIcon'
+            widget: 'string'
+      - label: 'เกี่ยวกับตัวเอง'
+        name: 'aboutMe'
+        widget: 'text'
+      - label: 'ข้อมูลส่วนตัว'
+        name: 'personalDetail'
+        widget: 'object'
+        fields:
+          - label: 'ชื่อ - นามสกุล'
+            name: 'name'
+            widget: 'string'
+          - label: 'อีเมล์'
+            name: 'email'
+            widget: 'string'
+          - label: 'เบอร์โทรศัพท์'
+            name: 'phoneNumber'
+            widget: 'string'
